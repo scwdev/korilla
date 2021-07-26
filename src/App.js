@@ -19,8 +19,8 @@ export default function App() {
 
   let filteredArr = dataArray;
 
+  // My favourite thing that I've writting so far vvv
   filteredArr = dataArray.filter((entry) => {
-    console.log("entry", entry.person);
     return entry.person.toLowerCase().startsWith(search.toLowerCase());
   });
 
