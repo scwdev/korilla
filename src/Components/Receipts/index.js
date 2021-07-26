@@ -15,22 +15,33 @@ const Receipts = (props) => {
 
     // console.log(item.paid);
     return (
-      <section key={index}>
-        <h3>{item.person}</h3>
-        <h2>{item.order.main}</h2>
+      <section className="receipt-container" key={index}>
+        <h2>{item.person}</h2>
+        <h3>{item.order.main}</h3>
         <ul>
-          <li>{item.order.protein}</li>
-          <li>{item.order.rice}</li>
-          <li>{item.order.sauce}</li>
-          <li>{item.order.drink}</li>
-          <li>${item.order.cost}</li>
+          <li>
+            <span>Protein</span>: {item.order.protein}
+          </li>
+          <li>
+            <span>Rice</span>: {item.order.rice}
+          </li>
+          <li>
+            <span>Sauce</span>: {item.order.sauce}
+          </li>
+          <li>
+            <span>Drink</span>: {item.order.drink}
+          </li>
+          <li>
+            <span>Price</span>: ${item.order.cost}
+          </li>
         </ul>
+        <span>Paid? </span>
         <button onClick={handleClick}>{item.paid.toString()}</button>
       </section>
     );
   });
 
-  return <div>{receipts}</div>;
+  return <div className="receipts-div">{receipts}</div>;
 };
 
 export default Receipts;

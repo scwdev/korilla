@@ -14,8 +14,9 @@ const SearchForm = (props) => {
   };
 
   return (
-    <div>
+    <div id="search-form">
       <form onSubmit={handleSubmit}>
+        <label for="entry">Filter Receipts: </label>
         <input
           type="search"
           name="entry"

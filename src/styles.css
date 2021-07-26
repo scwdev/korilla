@@ -1,9 +1,74 @@
 * {
-  background: dimgray;
-  color: whitesmoke;
+  background: ghostwhite;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.App h1 span {
+  font-size: 0.5em;
+}
+
+div#search-form {
+  margin: 15px;
+}
+
+div#search-form > * {
+  font-size: 1.2em;
+}
+
+div.receipts-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+div section.receipt-container {
+  min-width: 250px;
+  max-width: 250px;
+  padding: 25px 0px 25px 50px;
+  /* padding-left: 50px; */
+  flex: 1 1 0;
+  border: 1px solid orange;
+  margin: 15px;
+  text-align: left;
+}
+
+.receipt-container h2,
+.receipt-container h3 {
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.receipt-container ul {
+  margin: 0;
+  padding: 0;
+}
+
+.receipt-container ul li {
+  list-style: none;
+}
+
+.receipt-container ul span,
+.receipt-container span {
+  font-weight: bolder;
+}
+
+section#new-receipts-section {
+  margin: 0 auto;
+  width: 300px;
+  padding: 25px;
+  border: 1px solid greenyellow;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right: 50px;
+}
+
+section#new-receipts-section input,
+section#new-receipts-section div input {
+  width: 125px;
+  margin: 1px;
+  border: 1px solid grey;
 }

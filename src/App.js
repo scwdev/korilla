@@ -15,12 +15,14 @@ export default function App() {
 
   const receiveSearch = (entry) => {
     setSearch(entry);
-    newReceipt();
   };
 
-  let filteredArr = dataArray.filter((entry) =>
-    entry.person.toLowerCase().startsWith(search.toLowerCase())
-  );
+  let filteredArr = dataArray;
+
+  filteredArr = dataArray.filter((entry) => {
+    console.log("entry", entry.person);
+    return entry.person.toLowerCase().startsWith(search.toLowerCase());
+  });
 
   const payToggle = (event) => {
     setPaid(paid + 1);
@@ -35,15 +37,17 @@ export default function App() {
 
   const newReceipt = (receipt) => {
     setAddReceipt(addReceipt + 1);
-    dataArray.push(receipt)
+    dataArray.push(receipt);
     console.log(dataArray);
   };
 
   return (
     <div className="App">
-      <h1>Noam's App</h1>
+      <h1>
+        Korilla Receipts <span>(by Noam)</span>
+      </h1>
       <SearchForm value={search} receiveSearch={receiveSearch} />
-      <NewReceiptsForm newReceipt={newReceipt}/>
+      <NewReceiptsForm newReceipt={newReceipt} />
       <Receipts data={filteredArr} payToggle={payToggle} />
     </div>
   );

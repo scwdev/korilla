@@ -14,6 +14,7 @@ const NewReceiptForm = (props) => {
   const inputRefPaid = useRef(false);
 
   const handleSubmit = (event) => {
+    console.log("event, ", document.getElementById("new-receipts-form"));
     event.preventDefault();
     const newSubmit = {
       id: data.length + 1,
@@ -26,14 +27,15 @@ const NewReceiptForm = (props) => {
         drink: inputRefDrink.current.value,
         cost: inputRefCost.current.value
       },
-      paid: inputRefPaid.current.value
+      paid: false
     };
+    document.getElementById("new-receipts-form").reset();
     props.newReceipt(newSubmit);
   };
 
   return (
-    <section>
-      <form>
+    <section id="new-receipts-section">
+      <form id="new-receipts-form">
         <label for="person">Name: </label>
         <input ref={inputRefPerson} type="text" id="person" />
         <br />
@@ -57,12 +59,12 @@ const NewReceiptForm = (props) => {
           <input ref={inputRefCost} type="number" id="cost" min="0" />
           <br />
         </div>
-        <p>Payment Status</p>
+        {/* <p>Payment Status</p>
         <label for="false">Pending</label>
         <input ref={inputRefPaid} type="radio" id="false" name="paid" checked />
         <label for="true">Paid in full</label>
         <input ref={inputRefPaid} type="radio" id="true" name="paid" />
-        <br />
+        <br /> */}
         <input onClick={handleSubmit} type="submit" value="Log New Receipt" />
       </form>
     </section>
